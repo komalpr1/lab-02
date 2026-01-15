@@ -55,19 +55,32 @@
                 android:paddingRight="24dp"
                 android:paddingBottom="24dp"
                 android:text="@string/delete_city" />
+
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/city_list"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="845dp">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/city_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp">
 
 
-        </ListView>
+                </ListView>
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,19 +88,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
+                    android:id="@+id/input_text"
                     android:layout_width="517dp"
                     android:layout_height="64dp"
                     android:hint="Enter City Name: " />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="328dp"
-                android:layout_height="59dp"
-                android:layout_weight="1"
-                android:text="Confirm" />
 
         </LinearLayout>
 

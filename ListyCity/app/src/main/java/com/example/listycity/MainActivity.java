@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         cityList = findViewById(R.id.city_list);
 
-        String []cities = {"Edmonton", "Vancouver", "Moscow", "Sydney", "Berlin", "Vienna", "Tokyo", "Beijing", "Osaka", "New Delhi"};
+        String []cities = {"Edmonton"};
 
         dataList = new ArrayList<>();
         dataList.addAll(Arrays.asList(cities));
@@ -45,14 +47,39 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
-
-        Button button = findViewById(R.id.button6);
+        EditText city1 = findViewById(R.id.input_text);
+        Button button = findViewById(R.id.button6); //add city
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                cityAdapter.add(String.valueOf(city1.getText()));
+                city1.setText("");
+
+                Toast.makeText(getApplicationContext(), "text", Toast.LENGTH_SHORT).show();
+
             }
+
+
+
         });
+
+        Button button2 = findViewById(R.id.button7); //delete city
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cityAdapter.remove(String.valueOf(city1.getText()));
+                city1.setText("");
+
+                Toast.makeText(getApplicationContext(), "text2", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+
+        });
+
 
 
     }
