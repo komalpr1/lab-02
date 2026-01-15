@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 cityAdapter.add(String.valueOf(city1.getText()));
                 city1.setText("");
 
-                Toast.makeText(getApplicationContext(), "text", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 cityAdapter.remove(String.valueOf(city1.getText()));
                 city1.setText("");
 
-                Toast.makeText(getApplicationContext(), "text2", Toast.LENGTH_SHORT).show();
 
             }
 
